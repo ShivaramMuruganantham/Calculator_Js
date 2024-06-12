@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="flex justify-center items-center min-h-screen">
+    <div class="bg-[#1c1c1c] w-[400px] p-2 border rounded-3xl">
+        <div  class="">
+            <input type="tel" id="input" class="text-end text-4xl font-medium overflow-hidden p-5 m-3 w-[350px] bg-[#1c1c1c] outline-none text-white"><br>
+        </div>
+
+        <div>
+            <button type="button" id="clear" onclick="clear_sc()" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#d4d4d2]  font-medium hover:bg-[#ffffff]">AC</button>
+            <button type="button" id="delet" onclick="delet_sc()" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#d4d4d2]  font-medium hover:bg-[#ffffff]">DEL</button>
+            <button type="button" id="percent" onclick="display('%')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#d4d4d2]  font-bold hover:bg-[#ffffff]">%</button>
+            <button type="button" id="divide" onclick="display('/')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#ff9500] font-bold text-white hover:bg-[#fffefe] hover:text-[#ff9500]">/</button>
+        </div>
+        <div>
+            <button type="button" id="seven" onclick="display('7')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">7</button>
+            <button type="button" id="eight" onclick="display('8')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">8</button>
+            <button type="button" id="nine" onclick="display('9')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">9</button>
+            <button type="button" id="multiply" onclick="display('*')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#ff9500] font-bold text-white hover:bg-[#fffefe] hover:text-[#ff9500]">x</button>
+        </div>
+        <div>
+            <button type="button" id="four" onclick="display('4')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">4</button>
+            <button type="button" id="five" onclick="display('5')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">5</button>
+            <button type="button" id="six" onclick="display('6')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">6</button>
+            <button type="button" id="sub" onclick="display('-')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#ff9500] font-bold text-white hover:bg-[#fffefe] hover:text-[#ff9500]">-</button>
+        </div>
+        <div>
+            <button type="button" id="one" onclick="display('1')" class="w-[75px] h-[70px] text-xl  rounded-full py-5 px-7 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">1</button>
+            <button type="button" id="two" onclick="display('2')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">2</button>
+            <button type="button" id="three" onclick="display('3')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">3</button>
+            <button type="button" id="add" onclick="display('+')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#ff9500] font-bold text-white hover:bg-[#fffefe] hover:text-[#ff9500]">+</button>    
+        </div>
+        <div>
+            <button type="button" id="zero" onclick="display('0')" class="w-[170px] h-[70px] text-xl  rounded-full py-5 px-14 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">0</button>
+            <button type="button" id="dot" onclick="display('.')" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#505050] text-white hover:bg-[#7a7979]">.</button>
+            <button type="button" id="equal" onclick="calculate()" class="w-[75px] h-[70px] text-xl  rounded-full p-5 m-2 bg-[#ff9500] font-bold text-white hover:bg-[#fffefe] hover:text-[#ff9500]">=</button>
+        </div>
+    </div>
+
+    <script>
+
+        const input = document.getElementById('input');
+
+        function display(num) {
+            input.value += num; 
+        }
+        function clear_sc(){
+            input.value = " ";
+        }
+        function delet_sc(){
+            input.value = input.value.slice(0,-1);
+        }
+        function calculate(){
+            try{
+                input.value = eval(input.value);
+            }
+            catch{
+                input.value = "Error";
+            }
+        }
+    </script>
+</body>
+</html>
